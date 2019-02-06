@@ -2,34 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use App\Chat;
-use App\User;
+use App\Message;
 use Illuminate\Http\Request;
 
-class ChatController extends Controller
+class MessageController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function page ()
-    {
-        return view('chats');
-    }
-
     public function index()
     {
-        $chats = Auth::user()->chats();
-        return response()->json(['data' => $chats], 200);
+        //
     }
 
-    public function create(User $user)
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        $chat = !!Chat::exists($user, Auth::user()) ? Chat::exists($user, Auth::user()) : Chat::create(['initiator_id' => Auth::id(), 'partner_id' => $user->id]);
-        return view('chats', compact('chat'));
+        //
     }
 
     /**
@@ -40,16 +35,16 @@ class ChatController extends Controller
      */
     public function store(Request $request)
     {
-        //\
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Chat  $chat
+     * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function show(Chat $chat)
+    public function show(Message $message)
     {
         //
     }
@@ -57,10 +52,10 @@ class ChatController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Chat  $chat
+     * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function edit(Chat $chat)
+    public function edit(Message $message)
     {
         //
     }
@@ -69,10 +64,10 @@ class ChatController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Chat  $chat
+     * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Chat $chat)
+    public function update(Request $request, Message $message)
     {
         //
     }
@@ -80,10 +75,10 @@ class ChatController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Chat  $chat
+     * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Chat $chat)
+    public function destroy(Message $message)
     {
         //
     }

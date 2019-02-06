@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/chats', 'ChatController@page')->name('chats.view');
+    Route::get('/users/{user}/chat', 'ChatController@create')->name('user.chat');
+    Route::get('/chats/all', 'ChatController@index');
+});

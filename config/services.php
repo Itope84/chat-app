@@ -12,7 +12,7 @@ return [
     | default location for this type of information, allowing packages
     | to have a conventional place to find your various credentials.
     |
-    */
+     */
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
@@ -38,6 +38,14 @@ return [
             'secret' => env('STRIPE_WEBHOOK_SECRET'),
             'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
         ],
+    ],
+
+    'firebase' => [
+        'api_key' => 'AIzaSyD9JB8e5Kn0ZfslmvIksM-dQNohb7HCHOU', // Only used for JS integration
+        'auth_domain' => 'chat-app-8855d.firebaseapp.com', // Only used for JS integration
+        'database_url' => 'https://chat-app-8855d.firebaseio.com',
+        'secret' => 'fn3gwNVHr87CfIaeWjVljPfLfSj374Z9Qp2DDxT4',
+        'storage_bucket' => 'chat-app-8855d.appspot.com', // Only used for JS integration
     ],
 
 ];

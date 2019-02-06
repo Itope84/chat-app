@@ -10623,3 +10623,11 @@ input.imginput {
   border-bottom-right-radius: 0;
 }
 
+.user-list-item.active {
+  background-color: #6574cd;
+}
+
+.user-list-item.active a {
+  color: #fff !important;
+}
+

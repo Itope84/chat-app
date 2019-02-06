@@ -137,3 +137,13 @@ input.imginput {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
+
+.user-list-item {
+    &.active {
+        background-color: $accent;
+        a {
+            color: #fff !important;
+        }
+    }
+
+}
